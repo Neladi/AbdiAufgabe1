@@ -1,6 +1,7 @@
 package de.abdi.common;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Landstrasse {
     String name;
@@ -24,7 +25,7 @@ public class Landstrasse {
         // Schleife über alle Trasierungselemente um die Gesamtlänge der Landstraße zu ermitteln
         for (TrasierungsElement element: this.trasierungsElemente) {
             // Die Trasierungselement länge (element.laenge) auf die "gesamtlänge" addieren
-            gesamtLaenge += element.laenge;
+            gesamtLaenge += element.getLaenge();
         }
 
         //zurückgeben der ermittelten gesamtlänge
@@ -45,5 +46,20 @@ public class Landstrasse {
         return anzahlPfosten;
     }
 
+    public ArrayList<Schild> berechneBeschilderungen() {
+        ArrayList<Schild> beschilderungen = new ArrayList<Schild>();
 
+        int lastSpeedlimit = 0;
+
+        for (TrasierungsElement element: this.trasierungsElemente) {
+            int speedlimit = element.berechneGeschwindigkeitsbegrenzung();
+            if (speedlimit != lastSpeedlimit) {
+                Schild schild = new Schild(speedlimit, element);
+                beschilderungen.add(schild);
+            }
+            lastSpeedlimit = speedlimit;
+        }
+
+        return beschilderungen;
+    }
 }

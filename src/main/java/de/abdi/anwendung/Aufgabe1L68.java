@@ -1,5 +1,7 @@
 package de.abdi.anwendung;
 
+import de.abdi.common.Gerade;
+import de.abdi.common.Kurve;
 import de.abdi.common.Landstrasse;
 import de.abdi.common.TrasierungsElement;
 
@@ -10,19 +12,19 @@ public class Aufgabe1L68 {
         this.l68 = new Landstrasse("l68");
 
         l68.addTrasierungsElement(
-                new TrasierungsElement("ersteStück", 2)
+                new Gerade("ersteStück", 200)
         );
 
         l68.addTrasierungsElement(
-                new TrasierungsElement("zweitesStück", 1, 10)
+                new Kurve("zweitesStück", 100, 10)
         );
 
         l68.addTrasierungsElement(
-                new TrasierungsElement("drittesStück", 2)
+                new Gerade("drittesStück", 200)
         );
 
         l68.addTrasierungsElement(
-                new TrasierungsElement("viertesStück", 1, 10)
+                new Kurve("viertesStück", 100, 10)
         );
     }
 
