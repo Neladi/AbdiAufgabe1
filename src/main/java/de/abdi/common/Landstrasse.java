@@ -17,6 +17,7 @@ public class Landstrasse {
         // Methode: anfügen eines Trasierungselementes zur ArrayList "trasierungsElemente"
         this.trasierungsElemente.add(e);
     }
+
     // Methode:
     public int berechneGesamtLaenge() {
         int gesamtLaenge = 0;

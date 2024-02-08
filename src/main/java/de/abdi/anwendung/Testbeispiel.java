@@ -8,7 +8,7 @@ public class Testbeispiel {
     public Landstrasse testLandstrasse;
 
     public Testbeispiel() {
-        this.testLandstrasse = new Landstrasse("L3421");
+        testLandstrasse = new Landstrasse("L3421");
 
         testLandstrasse.addTrasierungsElement(
                 new Gerade("L3421-1", 8384)
@@ -46,6 +46,9 @@ public class Testbeispiel {
 
     public static void main(String[] args) {
         Testbeispiel aufgabe2L68 = new Testbeispiel();
+
+        System.out.print("Gesamtlänge: ");
+        System.out.println(aufgabe2L68.testLandstrasse.berechneGesamtLaenge());
 
         System.out.print("Anzahl Leitpfosten: ");
         System.out.println(aufgabe2L68.testLandstrasse.berechneAnzahlLeitpfosten());
