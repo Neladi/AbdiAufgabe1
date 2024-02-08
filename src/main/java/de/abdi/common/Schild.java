@@ -11,6 +11,6 @@ public class Schild {
 
     @Override
     public String toString() {
-        return trasierungsElement.getBezeichnung() + ": " + geschwBegrenzung.toString();
+        return trasierungsElement.bezeichnung + ": " + geschwBegrenzung.toString();
     }
 }
